@@ -14,12 +14,12 @@ public void setup()
 public void draw() 
 {
   background(0);
-  one.move();
-  one.show();
   for(int i=0; i < two.length; i++)
   {
     two[i].show();
   }
+  one.move();
+  one.show();
 }
 class SpaceShip extends Floater  
 {   
