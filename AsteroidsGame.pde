@@ -250,7 +250,7 @@ public void keyPressed()
   {
     one.rotate(-15);
   }
-  if(key == 's')
+  if(key == 's') 
   {
     one.rotate(15);
   }
