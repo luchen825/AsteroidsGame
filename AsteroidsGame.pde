@@ -26,11 +26,14 @@ public void draw()
   {
     two[i].show();
   }
+<<<<<<< HEAD
   for(int j=0; j < three.length; j++)
   {
     three[j].move();
     three[j].show();
   }
+=======
+>>>>>>> 7d2c19e90fe989609b99ddd1358108932f31f490
   one.move();
   one.show();
 }
