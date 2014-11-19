@@ -1,6 +1,6 @@
 SpaceShip one;
 Stars [] two;
-Asteroid [] three;
+ArrayList <Asteroid> three;
 public void setup() 
 {
   size(600,500);
@@ -11,12 +11,12 @@ public void setup()
   {
     two[i] = new Stars((int)(Math.random()*600),(int)(Math.random()*500));
   }
-  three = new Asteroid[10];
-  for(int j=0; j < three.length; j++)
+  three = new ArrayList <Asteroid>();
+  for(int j=0; j < 10; j++)
   {
-    three[j] = new Asteroid((int)(Math.random()*10)-5);
-    three[j].setDirectionX(Math.random()*2-1);
-    three[j].setDirectionY(Math.random()*2-1);
+    three.add(new Asteroid((int)(Math.random()*10)-5));
+    three.get(j).setDirectionX(Math.random()*2-1);
+    three.get(j).setDirectionY(Math.random()*2-1);
   }
 }
 public void draw() 
@@ -26,14 +26,11 @@ public void draw()
   {
     two[i].show();
   }
-<<<<<<< HEAD
-  for(int j=0; j < three.length; j++)
+  for(int j=0; j < three.size(); j++)
   {
-    three[j].move();
-    three[j].show();
+    three.get(j).move();
+    three.get(j).show();
   }
-=======
->>>>>>> 7d2c19e90fe989609b99ddd1358108932f31f490
   one.move();
   one.show();
 }
@@ -59,7 +56,7 @@ class SpaceShip extends Floater
     myDirectionX = 0;
     myDirectionY = 0;
     myPointDirection = 0;
-  } 
+  }
   public void setX(int x){myCenterX = x;}
   public int getX(){return (int)myCenterX;}
   public void setY(int y){myCenterY = y;}
@@ -129,7 +126,6 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   abstract public double getDirectionY();   
   abstract public void setPointDirection(int degrees);   
   abstract public double getPointDirection(); 
-
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
@@ -166,8 +162,8 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     else if (myCenterY < 0)
     {     
       myCenterY = height;    
-    }   
-  }   
+    }
+  }
   public void show ()  //Draws the floater at the current position  
   {             
     fill(myColor);   
@@ -184,8 +180,8 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
       vertex(xRotatedTranslated,yRotatedTranslated);    
     }   
     endShape(CLOSE);  
-  }   
-} 
+  }
+}
 class Stars extends Floater
 {
   Stars(double a, double b)
