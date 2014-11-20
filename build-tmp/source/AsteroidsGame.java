@@ -46,6 +46,11 @@ public void draw()
   {
     three.get(j).move();
     three.get(j).show();
+    if(dist(one.getX(),one.getY(),three.get(j).getX(),three.get(j).getY()) <= 25)
+    {
+      three.remove(j);
+      j--;
+    }
   }
   one.move();
   one.show();
