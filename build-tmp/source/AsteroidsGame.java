@@ -55,8 +55,8 @@ public void draw()
       {
         three.remove(j);
         four.remove(k);
-        j--;
-        k--;
+        
+        three.add(new Asteroid((int)(Math.random()*10)-5));
       }
       /*if(dist(one.getX(),one.getY(),three.get(j).getX(),three.get(j).getY()) <= 10)
       {
